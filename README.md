@@ -2,7 +2,8 @@
 
 RCRT is an enhanced, full Preempt RT implementation for Ubuntu-based Linux systems.
 
-*This patch is for manipulating Vanilla Linux kernel source version 4.16.8*
+
+*This is a kernel patch. If you don't want to compile your own kernel, install our [kernel binaries](https://github.com/randychrisrealtime/RCRT-kernel-binaries). This patch is for manipulating Vanilla Linux kernel source version 4.16.8*
 
 #### Extra Features
   * Ureadahead support 
@@ -11,12 +12,12 @@ RCRT is an enhanced, full Preempt RT implementation for Ubuntu-based Linux syste
 
 
 #### Patch instructions
-  * install some dependencies
+  * Install some dependencies
 ```bash
 sudo apt-get install -y git fakeroot build-essential xz-utils libssl-dev bc kernel-package libncurses5-dev ccache wget dh-make devscripts subversion perl gawk libelf-dev bison flex qt4-qmake libqt4-dev pkg-config
 ```
 ---
-  * create and move to build folder
+  * Create and move to build folder
 ```bash
 mkdir ~/src
 cd ~/src
