@@ -14,12 +14,18 @@ RCRT is an enhanced, full Preempt RT implementation for Ubuntu-based Linux syste
   * install some dependencies
 ```bash
 sudo apt-get install -y git fakeroot build-essential xz-utils libssl-dev bc kernel-package libncurses5-dev ccache wget dh-make devscripts subversion perl gawk libelf-dev bison flex qt4-qmake libqt4-dev pkg-config
-
+```
+---
+  * create and move to build folder
+```bash
 mkdir ~/src
 cd ~/src
 ```
-
-  * Put this patch and config into the src directory you just created.
+---
+  * Clone RCRT git to get the patch and config
+```bash
+git clone https://github.com/randychrisrealtime/RCRT-Linux-Preempt-RT-Patch rcrt
+```
 ---
   * Download the linux source, unpack the tarball, and move to the linux-4.16.8 directory.
 
@@ -31,17 +37,17 @@ cd linux-4.16.8
 ---
   * Apply the patch.
 ```bash
-patch -p1 -i ../patch-4.16.8-circe.patch
+patch -p1 -i ../rcrt/patch-4.16.8-circe.patch
 ```
 ---
   * Apply the config.
 ```bash
-cp ../x86_64RT_defconfig .config
+cp ../rcrt/x86_64RT_defconfig .config
 ```
 ---
   * Make clean, and make your menuconfig.
 ```bash
-make clean
+make clean && make mrproper
 make menuconfig
 ```
 ![example kernel menuconfig screen](https://linuxhint.com/wp-content/uploads/2018/02/s7.png)
