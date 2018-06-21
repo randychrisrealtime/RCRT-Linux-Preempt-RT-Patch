@@ -23,6 +23,7 @@ make menuconfig
 #note: edit settings to your liking
 
 make -j `getconf _NPROCESSORS_ONLN` bindeb-pkg &> ../kernelwarnings.txt
+
 cd ..
 sudo dpkg -i *.deb
 
