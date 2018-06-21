@@ -6,7 +6,7 @@ RCRT is an enhanced, full Preempt RT implementation for Ubuntu-based Linux syste
 
 #### Extra Features
   * Ureadahead support 
-  * SPL-ZFS support (working with full preempt rt enable)
+  * SPL-ZFS support (working with full preempt rt enabled)
   * Aufs support
 
 
