@@ -19,9 +19,9 @@ mkdir ~/src
 cd ~/src
 ```
 
-  * Put this patch and config into this new src directory.
+  * Put this patch and config into the src directory you just created.
 ---
-  * Download the linux source, unpack the tarball, and move to the source directory.
+  * Download the linux source, unpack the tarball, and move to the linux-4.16.8 directory.
 
 ```bash
 wget https://mirrors.edge.kernel.org/pub/linux/kernel/v4.x/linux-4.16.8.tar.gz 
