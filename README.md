@@ -65,7 +65,14 @@ sudo dpkg -i *.deb
 ```
 ---
   * Download the linux-firmware package.
-restart. remove all other kernel files and old firmware package.
+```bash
+wget https://sourceforge.net/projects/rcrt-ubuntu-preemptrt/files/linux-firmware-1.178.deb
+```
+  * restart
+---
+  * remove all other kernel files and old firmware package.
+---
+  * install new firmware package
 ```bash
 sudo dpkg -i linux-firmware-1.178.deb
 ```
