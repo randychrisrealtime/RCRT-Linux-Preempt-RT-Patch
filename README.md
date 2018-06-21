@@ -12,7 +12,7 @@ RCRT is an enhanced, full Preempt RT implementation for Ubuntu-based Linux syste
 
 
 #### Patch instructions
-  *Open a shell. Before you start, it's recommended that you install some recommended support for building modules against custom kernels. To do so, run this command.
+  *Open a shell. Before you start, it's recommended that you install some support for building modules against custom kernels. To do so, run this command.
 ```bash
 sudo apt-get install --no-install recommends dkms
 ```
