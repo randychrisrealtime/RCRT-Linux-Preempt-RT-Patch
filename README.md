@@ -1,32 +1,65 @@
-# rcrt
-full preempt rt patch for Ubuntu.
+# RCRT-Linux-Preempt-RT-Patch
 
-Full Preempt RT patch with Ureadahead Tracer patch, SPL-ZFS (working with full preempt rt enable) patch, and Aufs.
+RCRT is an enhanced, full Preempt RT implementation for Ubuntu-based Linux systems.
 
-Patch for Vanilla kernel version 4.16.8
+*This patch is for manipulating Vanilla Linux kernel source version 4.16.8*
 
+#### Extra Features
+  * -Ureadahead support 
+  * -SPL-ZFS support (working with full preempt rt enable)
+  * -Aufs support
+
+
+#### Patch instructions
+  * install some dependencies
+```bash
 sudo apt-get install -y git fakeroot build-essential xz-utils libssl-dev bc kernel-package libncurses5-dev ccache wget dh-make devscripts subversion perl gawk libelf-dev bison flex qt4-qmake libqt4-dev pkg-config
 
 mkdir ~/src
 cd ~/src
+```
 
-#Note: put patch and config in this directory
+  * Put this patch and config into this new src directory.
+---
+  * Download the linux source, unpack the tarball, and move to the source directory.
 
+```bash
 wget https://mirrors.edge.kernel.org/pub/linux/kernel/v4.x/linux-4.16.8.tar.gz 
 tar -xzf linux-4.16.8.tar.gz
 cd linux-4.16.8
+```
+---
+  * Apply the patch.
+```bash
 patch -p1 -i ../patch-4.16.8-circe.patch
+```
+---
+  * Apply the config.
+```bash
 cp ../x86_64RT_defconfig .config
+```
+---
+  * Make clean, and make your menuconfig.
+```bash
 make clean
 make menuconfig
-
-#note: edit settings to your liking
-
+```
+![example kernel menuconfig screen](https://linuxhint.com/wp-content/uploads/2018/02/s7.png)
+  * Edit the menuconfig settings to your liking, save, and exit.
+---
+  * Compile your kernel as a deb package.
+```bash
 make -j `getconf _NPROCESSORS_ONLN` bindeb-pkg &> ../kernelwarnings.txt
-
+```
+---
+  * Go up one directory, and install your new kernel
+```bash
 cd ..
 sudo dpkg -i *.deb
-
-Download firmware package.
+```
+---
+  * Download the linux-firmware package.
 restart. remove all other kernel files and old firmware package.
+```bash
 sudo dpkg -i linux-firmware-1.178.deb
+```
