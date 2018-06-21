@@ -36,14 +36,14 @@ tar -xzf linux-4.16.8.tar.gz
 cd linux-4.16.8
 ```
 ---
- * if you want to change the tag at the end of the kernel. NOTE: it has to follow these two rules it starts with a '-' and has to be all lowercase. Just like it is now.
-```bash
-nano localversion-rc
-```
----
   * Apply the patch.
 ```bash
 patch -p1 -i ../rcrt/patch-4.16.8-circe.patch
+```
+---
+ * if you want to change the tag at the end of the kernel. NOTE: it has to follow these two rules it starts with a '-' and has to be all lowercase. Just like it is now.
+```bash
+nano localversion-rc
 ```
 ---
   * Apply the config.
