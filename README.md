@@ -74,5 +74,6 @@ wget https://sourceforge.net/projects/rcrt-ubuntu-preemptrt/files/linux-firmware
 ---
   * install new firmware package
 ```bash
+cd ~/src
 sudo dpkg -i linux-firmware-1.178.deb
 ```
