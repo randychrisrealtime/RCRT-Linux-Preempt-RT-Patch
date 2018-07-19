@@ -86,4 +86,4 @@ sudo dpkg -i linux-firmware_1.80_all.deb
 ```
 ---
 ## Stage 2 Patch
-This patch will upgrade the kernel build to a meta package model that allows you to create indivifual flavour builds. If oyu are familiar with these type of builds, patch your stage 1 patch output with the linux-4.15.16-circe-4.8.1-debuild.patch file, apply your changes, and use debuild to output the full Ubuntu linux package set.
+This patch will upgrade the kernel build to a meta package model that allows you to create indivifual flavour builds. If you are familiar with these type of builds, patch your stage 1 patch output with the linux-4.15.16-circe-4.8.1-debuild.patch file, apply your changes, and use debuild to output the full Ubuntu linux package set.
