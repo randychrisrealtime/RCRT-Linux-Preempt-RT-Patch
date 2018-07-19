@@ -29,17 +29,17 @@ mkdir ~/src
 cd ~/src
 ```
 ---
-  * Clone RCRT git to get the patch and config
+  * Clone RCRT git to get the patches
 ```bash
 git clone https://github.com/randychrisrealtime/RCRT-Linux-Preempt-RT-Patch rcrt
 ```
 ---
-  * Download the linux source, unpack the tarball, and move to the linux-4.16.8 directory.
+  * Download the linux source, unpack the tarball, and move to the linux-4.16.15 directory.
 
 ```bash
 wget https://mirrors.edge.kernel.org/pub/linux/kernel/v4.x/linux-4.16.15.tar.gz 
-tar -xzf linux-4.16.8.tar.gz
-cd linux-4.16.8
+tar -xzf linux-4.16.15.tar.gz
+cd linux-4.16.15
 ```
 ---
   * Apply the patch.
@@ -50,11 +50,6 @@ patch -p1 -i ../rcrt/linux-4.16.15-circe-4.patch
  * if you want to change the tag at the end of the kernel. NOTE: it has to follow these two rules it starts with a '-' and has to be all lowercase. Just like it is now.
 ```bash
 nano localversion-rc
-```
----
-  * Apply the config.
-```bash
-cp ../rcrt/x86_64RT_defconfig .config
 ```
 ---
   * Make clean, and make your menuconfig.
@@ -78,7 +73,7 @@ sudo dpkg -i *.deb
 ---
   * Download the linux-firmware package.
 ```bash
-wget https://sourceforge.net/projects/rcrt-ubuntu-preemptrt/files/linux-firmware-1.178.deb
+wget https://launchpad.net/~rcrt-linux/+archive/ubuntu/circe/+files/linux-firmware_1.180_all.deb
 ```
   * restart
 ---
@@ -87,7 +82,7 @@ wget https://sourceforge.net/projects/rcrt-ubuntu-preemptrt/files/linux-firmware
   * install new firmware package
 ```bash
 cd ~/src
-sudo dpkg -i linux-firmware-1.178.deb
+sudo dpkg -i linux-firmware_1.80_all.deb
 ```
 ---
 ## Stage 2 Patch
